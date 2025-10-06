@@ -7,29 +7,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AddressBookController {
-    @GetMapping("/addressbook")
-    public String addressBook(
-            @RequestParam(name = "name", required = false, defaultValue = "N/A") String name,
-            @RequestParam(name = "phoneNumber", required = false, defaultValue = "N/A") String phoneNumber,
-            Model model) {
-        AddressBook addressBook = new AddressBook();
-        addressBook.addBuddy(new BuddyInfo(name, phoneNumber));
+
+    private final AddressBook addressBook = new AddressBook();
+
+    public AddressBookController() {
         addressBook.addBuddy(new BuddyInfo("Joe", "222-222-2222"));
+    }
+
+    @GetMapping("/addressbook")
+    public String addressBook(Model model) {
         model.addAttribute("addressBook", addressBook);
         return "AddressBook";
     }
 
     @PostMapping("/addressbook")
-        public String addBuddy(
-                @RequestParam(name = "name") String name,
-                @RequestParam(name = "phoneNumber") String phoneNumber,
-                Model model) {
-            AddressBook addressBook = new AddressBook();
-            addressBook.addBuddy(new BuddyInfo(name, phoneNumber));
-            model.addAttribute("addressBook", addressBook);
-            return "AddressBook";
-        }
+    public String addBuddy(
+            @RequestParam(name = "name") String name,
+            @RequestParam(name = "phoneNumber") String phoneNumber,
+            Model model) {
+        addressBook.addBuddy(new BuddyInfo(name, phoneNumber));
+        model.addAttribute("addressBook", addressBook);
+        return "AddressBook";
     }
+}
 
 
 

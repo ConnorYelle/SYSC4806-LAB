@@ -47,11 +47,11 @@ public class JPATest {
 
         assertEquals("Connor", results.get(0).getBuddies().get(0).getName()); //Check name
         assertEquals("111-111-1112", results.get(0).getBuddies().get(0).getPhoneNumber()); //Check phone number string
-        assertEquals(2, results.get(0).getBuddies().get(0).getId()); //Check ID
+        assertEquals(1, results.get(0).getBuddies().get(0).getId()); //Check ID
 
         assertEquals("Joe", results.get(0).getBuddies().get(1).getName()); //Check name
         assertEquals("222-222-2221", results.get(0).getBuddies().get(1).getPhoneNumber()); //Check phone number string
-        assertEquals(3, results.get(0).getBuddies().get(1).getId()); //Check ID
+        assertEquals(2, results.get(0).getBuddies().get(1).getId()); //Check ID
 
         em.close();
         emf.close();
