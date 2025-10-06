@@ -11,6 +11,7 @@ import jakarta.persistence.*;
 public class BuddyInfo {
     private String name;
     private String phoneNumber;
+    private String address;
     @Id
     @GeneratedValue
     private long id;
@@ -100,4 +101,10 @@ public class BuddyInfo {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getAddress(){
+        return address;
+    }
+    public void setAddress(String address){
+        this.address = address;
+    }
 }

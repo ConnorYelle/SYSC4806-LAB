@@ -15,7 +15,16 @@ public class AddressBookController {
     }
 
     @GetMapping("/addressbook")
-    public String addressBook(Model model) {
+    public String addressBook(
+            @RequestParam(name = "name", required = false) String name,
+            @RequestParam(name = "phoneNumber", required = false) String phoneNumber,
+            @RequestParam(name = "address", required = false) String address,
+            Model model) {
+        if (name != null && phoneNumber != null) {
+            BuddyInfo buddyInfo = new BuddyInfo(name, phoneNumber);
+            buddyInfo.setAddress(address);
+            addressBook.addBuddy(buddyInfo);
+        }
         model.addAttribute("addressBook", addressBook);
         return "AddressBook";
     }

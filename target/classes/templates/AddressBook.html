@@ -14,6 +14,7 @@
     <tr th:each="buddy : ${addressBook.buddies}">
         <td th:text="${buddy.name}"></td>
         <td th:text="${buddy.phoneNumber}"></td>
+        <td th:text="${buddy.address}"></td>
     </tr>
 </table>
 </body>
