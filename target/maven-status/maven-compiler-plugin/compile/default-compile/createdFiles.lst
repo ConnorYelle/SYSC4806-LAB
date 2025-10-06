@@ -1,0 +1,7 @@
+org/example/MainApp.class
+org/example/AddressBook.class
+org/example/BuddyInfo.class
+org/example/AddressBookRepository.class
+org/example/BuddyInfoRepository.class
+org/example/AddressBookController.class
+org/example/TestRunApp.class
