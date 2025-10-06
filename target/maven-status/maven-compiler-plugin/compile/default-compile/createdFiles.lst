@@ -1,4 +1,5 @@
 org/example/MainApp.class
+org/example/AddressBookRESTController.class
 org/example/AddressBook.class
 org/example/BuddyInfo.class
 org/example/AddressBookRepository.class
